@@ -6,7 +6,9 @@ export default function ArticleCard({ article, bodyClass }) {
 		<div className="article-card">
 			<h3>{article.title}</h3>
 			<p className={bodyClass}>{article.body}</p>
-			<p>{article.author}</p>
+			<p>
+				in {article.topic} by {article.author}
+			</p>
 			<LikeButton votes={article.votes} />
 			<CommentsButton count={article.comment_count} id={article.article_id} />
 		</div>

@@ -1,5 +1,4 @@
 .App {
-	text-align: center;
 }
 
 .App-logo {
@@ -15,7 +14,6 @@
 
 .App-header {
 	background-color: #282c34;
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -43,6 +41,7 @@
 
 .article-body {
 	width: auto;
+	height: 40px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -70,4 +69,34 @@
 	margin: 10px;
 	padding: 10px;
 	display: inline-block;
+}
+
+.comment-author {
+	font-weight: bold;
+}
+
+.post-comment-container {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}
+
+.post-comment-button {
+	border: 1px solid black;
+	padding: 10px;
+	display: inline-block;
+}
+
+#comment {
+	width: 100%;
+	height: 100px;
+	border: 1px solid black;
+	margin-top: 10px;
+	padding: 10px;
+	display: inline-block;
+}
+
+.comment-container {
+	border-bottom: 1px solid black;
+	padding: 10px;
 }

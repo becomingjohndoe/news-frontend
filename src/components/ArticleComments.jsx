@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getArticleComments } from "../utils/api";
 import LikeButton from "./LikeButton";
+import PostComment from "./PostComment";
+
 export default function ArticleComments({ article_id }) {
 	const [comments, setComments] = useState([]);
 	useEffect(() => {
@@ -9,16 +11,16 @@ export default function ArticleComments({ article_id }) {
 
 	return (
 		<div>
-			<h2>Comments</h2>
-			<ul>
-				{comments.map((comment) => (
-					<li key={comment.created_at}>
-						<p>{comment.body}</p>
-						<p>{comment.author}</p>
-						<LikeButton votes={comment.votes} />
-					</li>
-				))}
-			</ul>
+			<PostComment />
+
+			{comments.map((comment) => (
+				<div className="comment-container" key={comment.created_at}>
+					<p className="comment-author">{comment.author}</p>
+					<p className="comment-body">{comment.body}</p>
+
+					<LikeButton votes={comment.votes} />
+				</div>
+			))}
 		</div>
 	);
 }

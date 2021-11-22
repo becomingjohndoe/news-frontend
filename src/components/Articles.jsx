@@ -9,7 +9,7 @@ export default function Articles() {
 	}, []);
 	return (
 		<div className="articles">
-			<h1>Articles</h1>
+			<h1 className="App-header">Articles</h1>
 			{articles.map((article) => {
 				return (
 					<ArticleCard
