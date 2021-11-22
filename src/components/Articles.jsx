@@ -11,7 +11,13 @@ export default function Articles() {
 		<div className="articles">
 			<h1>Articles</h1>
 			{articles.map((article) => {
-				return <ArticleCard key={article.article_id} article={article} />;
+				return (
+					<ArticleCard
+						key={article.article_id}
+						article={article}
+						bodyClass="article-body"
+					/>
+				);
 			})}
 		</div>
 	);

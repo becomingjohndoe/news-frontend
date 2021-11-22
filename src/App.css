@@ -48,6 +48,10 @@
 	white-space: nowrap;
 }
 
+.article-body-full {
+	width: auto;
+}
+
 .article-card {
 	border: 1px solid black;
 	margin: 10px;
