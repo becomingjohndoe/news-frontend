@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function CommentsButton({ count }) {
 	return (
 		<div className="comments-button">
-			<a href="">
-				<i className="fa fa-comments-o" aria-hidden="true"></i>
+			<Link to="/">
+				<i className="fa fa-comments-o"></i>
 				<span>{count}Comments</span>
-			</a>
+			</Link>
 		</div>
 	);
 }
