@@ -1,16 +1,16 @@
+import CommentsButton from "./CommentsButton";
+import LikeButton from "./LikeButton";
+
 export default function ArticleCard({ article }) {
 	return (
 		<div className="article-card">
-			<div className="article-card__title">
-				<h3>{article.title}</h3>
-			</div>
-			<div className="article-card__body">
-				<p>{article.body}</p>
-			</div>
-			<div className="article-card__footer">
-				<LikeButton />
-				<CommentsButton />
-			</div>
+			<h2>{article.title}</h2>
+			<p className="article-body">{article.body}</p>
+			<p>{article.author}</p>
+			<p>votes {article.votes}</p>
+			<p>comments{article.comment_count}</p>
+			<LikeButton />
+			<CommentsButton />
 		</div>
 	);
 }

@@ -40,3 +40,10 @@
 .navbar {
 	border: 1px solid black;
 }
+
+.article-body {
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
