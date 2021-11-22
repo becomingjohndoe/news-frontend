@@ -10,3 +10,15 @@ export const getAllArticles = () => {
 		return res.data.articles;
 	});
 };
+
+export const getArticleById = (id) => {
+	return api.get(`articles/${id}`).then((res) => {
+		return res.data.article;
+	});
+};
+
+export const getArticleComments = (id) => {
+	return api.get(`articles/${id}/comments`).then((res) => {
+		return res.data.comments;
+	});
+};

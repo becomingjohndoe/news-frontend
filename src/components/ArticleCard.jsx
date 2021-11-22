@@ -8,7 +8,7 @@ export default function ArticleCard({ article }) {
 			<p className="article-body">{article.body}</p>
 			<p>{article.author}</p>
 			<LikeButton votes={article.votes} />
-			<CommentsButton count={article.comment_count} />
+			<CommentsButton count={article.comment_count} id={article.article_id} />
 		</div>
 	);
 }
