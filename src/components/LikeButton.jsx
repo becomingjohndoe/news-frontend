@@ -1,3 +1,3 @@
-export default function LikeButton() {
-	return <button>Like</button>;
+export default function LikeButton({ votes }) {
+	return <button>{votes}Like</button>;
 }
