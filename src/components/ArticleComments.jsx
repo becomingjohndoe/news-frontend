@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getArticleComments } from "../utils/api";
-
+import LikeButton from "./LikeButton";
 export default function ArticleComments({ article_id }) {
 	const [comments, setComments] = useState([]);
 	useEffect(() => {
@@ -15,6 +15,7 @@ export default function ArticleComments({ article_id }) {
 					<li key={comment.created_at}>
 						<p>{comment.body}</p>
 						<p>{comment.author}</p>
+						<LikeButton votes={comment.votes} />
 					</li>
 				))}
 			</ul>
