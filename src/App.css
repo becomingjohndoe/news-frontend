@@ -55,13 +55,15 @@
 	border: 1px solid black;
 	margin: 10px;
 	padding: 10px;
+	border-radius: 10px;
+	min-width: 70%;
 }
 
 .like-button {
 	border: 1px solid black;
-	margin: 10px;
 	padding: 10px;
 	display: inline-block;
+	border-radius: 10px;
 }
 
 .comments-button {
@@ -69,6 +71,7 @@
 	margin: 10px;
 	padding: 10px;
 	display: inline-block;
+	border-radius: 10px;
 }
 
 .comment-author {
@@ -79,12 +82,14 @@
 	border: 1px solid black;
 	margin: 10px;
 	padding: 10px;
+	border-radius: 10px;
 }
 
 .post-comment-button {
 	border: 1px solid black;
 	padding: 10px;
 	display: inline-block;
+	border-radius: 10px;
 }
 
 #comment {
@@ -94,6 +99,7 @@
 	margin-top: 10px;
 	padding: 10px;
 	display: inline-block;
+	border-radius: 10px;
 }
 
 .comment-container {
