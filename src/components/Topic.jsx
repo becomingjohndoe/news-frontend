@@ -22,6 +22,7 @@ export default function Topic() {
 						key={article.article_id}
 						article={article}
 						bodyClass="article-body"
+						linkClass="disabled-link"
 					/>
 				);
 			})}
