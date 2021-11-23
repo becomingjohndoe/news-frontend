@@ -1,7 +1,9 @@
 export default function LikeButton({ votes }) {
 	return (
-		<button className="like-button">
-			<i className="fas fa-thumbs-up"></i> {votes}
-		</button>
+		<div className="like-button">
+			<i className="fas fa-arrow-up"></i>
+			<span className="votes">{votes}</span>
+			<i className="fas fa-arrow-down"></i>
+		</div>
 	);
 }

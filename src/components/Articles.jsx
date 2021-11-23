@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import Controls from "./Controls";
 
 export default function Articles() {
 	const [articles, setArticles] = useState([]);
@@ -10,6 +11,7 @@ export default function Articles() {
 	return (
 		<div className="articles">
 			<h1 className="App-header">Articles</h1>
+			<Controls />
 			{articles.map((article) => {
 				return (
 					<ArticleCard
