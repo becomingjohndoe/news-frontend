@@ -22,3 +22,16 @@ export const getArticleComments = (id) => {
 		return res.data.comments;
 	});
 };
+
+export const getUserByUsername = (username) => {
+	return api.get(`users/${username}`).then((res) => {
+		console.log(res.data.user);
+		return res.data.user;
+	});
+};
+
+export const getArticlesByTopic = (topic) => {
+	return api.get(`articles?topic=${topic}`).then((res) => {
+		return res.data.articles;
+	});
+};
