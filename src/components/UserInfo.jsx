@@ -2,11 +2,10 @@ import { getUserByUsername } from "../utils/api";
 import { useEffect, useState } from "react";
 
 export default function UserAvatar({ username }) {
-	const [user, setUser] = useState("");
+	const [user, setUser] = useState([]);
 
 	useEffect(() => {
 		getUserByUsername(username).then((data) => {
-			console.log(data);
 			setUser(data);
 		});
 	}, [username]);
