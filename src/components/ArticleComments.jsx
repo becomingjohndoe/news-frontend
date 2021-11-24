@@ -6,16 +6,16 @@ import UserInfo from "./UserInfo";
 
 export default function ArticleComments({ article_id }) {
 	const [comments, setComments] = useState([]);
+	const [posted, setPosted] = useState(false);
 	useEffect(() => {
 		getArticleComments(article_id).then(setComments);
-	}, [article_id]);
-
+	}, [article_id, posted]);
 	return (
 		<div>
-			<PostComment />
+			<PostComment setPosted={setPosted} id={article_id} />
 
 			{comments.map((comment) => (
-				<div className="comment-container" key={comment.created_at}>
+				<div className="comment-container" key={`${comment.comment_id}`}>
 					<UserInfo username={comment.author} />
 					<p className="comment-body">{comment.body}</p>
 					<LikeButton votes={comment.votes} />
