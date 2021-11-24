@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { timeElapsed } from "../utils/timeElapsed";
 import CommentsButton from "./CommentsButton";
 import LikeButton from "./LikeButton";
 
@@ -18,7 +19,7 @@ export default function ArticleCard({ article, bodyClass, linkClass }) {
 			<LikeButton votes={article.votes} id={article.article_id} />
 			<CommentsButton count={article.comment_count} id={article.article_id} />
 
-			<i className="far fa-clock"> {article.created_at}</i>
+			<i className="far fa-clock"> {timeElapsed(article.created_at)}</i>
 		</div>
 	);
 }
