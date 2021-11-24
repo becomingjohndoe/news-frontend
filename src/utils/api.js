@@ -24,14 +24,31 @@ export const getArticleComments = (id) => {
 };
 
 export const getUserByUsername = (username) => {
-	return api.get(`users/${username}`).then((res) => {
-		console.log(res.data.user);
-		return res.data.user;
-	});
+	return api
+		.get(`users/${username}`)
+		.then((res) => {
+			return res.data.user;
+		})
+		.catch(console.log);
 };
 
 export const getArticlesByTopic = (topic) => {
-	return api.get(`articles?topic=${topic}`).then((res) => {
-		return res.data.articles;
+	return api
+		.get(`articles?topic=${topic}`)
+		.then((res) => {
+			return res.data.articles;
+		})
+		.catch(console.log);
+};
+
+export const patchArticleVotes = (id, votes) => {
+	return api.patch(`articles/${id}`, { inc_votes: votes }).then((res) => {
+		return res.data.article;
+	});
+};
+
+export const postComment = (id, comment) => {
+	return api.post(`articles/${id}/comments`, comment).then((res) => {
+		return res.data.comment;
 	});
 };
