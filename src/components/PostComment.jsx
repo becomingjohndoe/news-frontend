@@ -6,13 +6,14 @@ export default function PostComment({ id, setPosted }) {
 	const { user } = useContext(userContext);
 	// post comment
 	const handleSubmit = (event) => {
+		setPosted(true);
 		event.preventDefault();
 		const newComment = {
 			username: user,
 			body: event.target.comment.value,
 		};
 		postComment(id, newComment).then(() => {
-			setPosted(true);
+			setPosted(false);
 		});
 	};
 	return (
