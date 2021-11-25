@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import { timeElapsed } from "../utils/timeElapsed";
 import CommentsButton from "./CommentsButton";
 import LikeButton from "./LikeButton";
-
+import { Navigate } from "react-router";
+import UserAvatar from "./UserInfo";
 export default function ArticleCard({ article, bodyClass, linkClass }) {
 	return (
 		<div className="article-card">
-			<p>
+			<div className="article-card-info">
 				in{" "}
 				<Link className={linkClass} to={`/articles/topic/${article.topic}`}>
-					{article.topic}
+					<strong>{`t/${article.topic}`}</strong>
 				</Link>{" "}
-				Posted by {article.author}
-			</p>
+				Posted by <UserAvatar username={article.author} />
+			</div>
 			<h4>{article.title}</h4>
 			<p className={bodyClass}>{article.body}</p>
 
