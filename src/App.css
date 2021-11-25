@@ -39,6 +39,8 @@
 .navbar {
 	border: 1px solid black;
 	background: #ffff;
+	padding: 10px;
+	min-height: 68px;
 }
 
 .main {
@@ -65,7 +67,7 @@
 }
 
 .article-card {
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	margin: 10px auto;
 	padding: 10px;
 
@@ -74,8 +76,17 @@
 }
 
 .article-card:hover {
-	box-shadow: #000000 0px 0px 5px;
+	box-shadow: #000000 0px 0px 2px;
+	/* border: 1px solid #000000; */
 	cursor: pointer;
+}
+
+.article-card-info {
+	/* margin: 10px auto; */
+	display: block ruby;
+	/* background: #ffff; */
+	padding-bottom: 10px;
+	font-size: 0.8em;
 }
 
 .like-button {
@@ -131,9 +142,16 @@
 	border-radius: 5px;
 }
 
+.comment-body {
+	border-left: rgb(165, 161, 161) solid 5px;
+	padding: 5px;
+	margin-left: 17px;
+	margin-top: 5px;
+}
+
 .comment-container {
-	border-bottom: 1px solid black;
-	padding: 10px;
+	/* border-bottom: 1px solid black; */
+	padding: 5px;
 	background: #ffff;
 	width: 100%;
 }
@@ -143,10 +161,10 @@
 }
 
 .user-avatar {
-	width: 28px;
-	height: 28px;
+	width: 22px;
+	height: 22px;
 	border-radius: 50%;
-	margin-right: 10px;
+	margin: 0 10px;
 	border: rgb(0, 0, 0) solid 1px;
 	transform: scale(1.3);
 }
@@ -157,4 +175,85 @@
 
 .disabled-link {
 	pointer-events: none;
+}
+
+.new-button {
+	padding: 5px;
+	display: inline-block;
+	border-radius: 30px;
+}
+
+.popular-button {
+	padding: 5px;
+	margin-left: 10px;
+	display: inline-block;
+	border-radius: 30px;
+	background: #ffff;
+}
+
+.popular-button:hover {
+	color: #0079d3;
+	cursor: pointer;
+}
+
+.popular-button:active {
+	color: #0079d3;
+}
+
+.controls {
+	margin: 10px auto;
+	display: flex;
+	background: #ffff;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+/* // import league spartan font */
+@import url("https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Spartan:wght@700&family=Titillium+Web:wght@900&display=swap");
+
+.logo {
+	/* width: 50px; */
+	/* height: 50px; */
+	/* border: rgb(0, 0, 0) solid 1px; */
+	/* transform: scale(0.8); */
+	font-family: "Spartan";
+	font-weight: 700;
+	font-size: 30px;
+	color: rgb(0, 0, 0);
+	letter-spacing: -1px;
+}
+
+.logo-i {
+	/* width: 50px; */
+	/* height: 50px; */
+	/* border: rgb(0, 0, 0) solid 1px; */
+	/* transform: scale(0.8); */
+	font-family: "Spartan";
+	font-weight: 700;
+	font-size: 30px;
+	color: #0079d3;
+}
+/* // underline logo when hovered */
+a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+a:hover {
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	border-bottom: 2px solid #0079d3;
+}
+
+.loading-icon-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.loading-icon {
+	width: 200px;
+	height: 200px;
+	border: rgb(0, 0, 0) solid 1px;
+	transform: scale(0.8);
 }
