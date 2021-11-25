@@ -1,33 +1,34 @@
-import { useState } from "react";
-
-export default function Controls() {
+export default function Controls({ setSortBy }) {
 	// search and filter controls
-	const [search, setSearch] = useState("");
-	const [filter, setFilter] = useState("all");
-
-	// handle search input
-	const handleSearch = (e) => {
-		setSearch(e.target.value);
-	};
 
 	// handle filter input
 	const handleFilter = (e) => {
-		setFilter(e.target.value);
+		setSortBy(e.target.name);
 	};
 
 	return (
 		<div className="controls">
-			<input
-				type="text"
-				placeholder="Search"
-				value={search}
-				onChange={handleSearch}
-			/>
-			<select value={filter} onChange={handleFilter}>
-				<option value="all">All</option>
-				<option value="active">Active</option>
-				<option value="completed">Completed</option>
-			</select>
+			<button
+				name="comment_count"
+				className="new-button btn active"
+				onClick={handleFilter}
+			>
+				<i className="fas fa-fire-alt"></i> Hot
+			</button>
+			<button
+				name="created_at"
+				className="new-button btn active"
+				onClick={handleFilter}
+			>
+				<i className="fas fa-star"></i> New
+			</button>
+			<button
+				name="votes"
+				className="new-button btn active"
+				onClick={handleFilter}
+			>
+				<i className="fas fa-level-up-alt"></i> Top
+			</button>
 		</div>
 	);
 }

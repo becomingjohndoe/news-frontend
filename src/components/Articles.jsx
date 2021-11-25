@@ -5,13 +5,14 @@ import Controls from "./Controls";
 
 export default function Articles() {
 	const [articles, setArticles] = useState([]);
+	const [sortBy, setSortBy] = useState("created_at");
 	useEffect(() => {
-		getAllArticles().then((articles) => setArticles(articles));
-	}, []);
+		getAllArticles(sortBy).then((articles) => setArticles(articles));
+	}, [sortBy]);
 	return (
 		<div className="articles">
-			<h1 className="App-header">Articles</h1>
-			<Controls />
+			<h6 className="">Popular posts</h6>
+			<Controls setSortBy={setSortBy} />
 			{articles.map((article) => {
 				return (
 					<ArticleCard
