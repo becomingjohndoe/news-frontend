@@ -5,7 +5,7 @@ export default function CommentsButton({ count, id }) {
 		<div className="comments-button">
 			<Link to={`/articles/${id}`}>
 				<span>
-					<i className="fa fa-comment"></i> {count} Comments
+					<i className="far fa-comment-dots"></i> {count} Comments
 				</span>
 			</Link>
 		</div>
