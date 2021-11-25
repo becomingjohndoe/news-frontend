@@ -13,7 +13,7 @@ export default function UserAvatar({ username }) {
 	return (
 		<div className="user-info">
 			<img className="user-avatar" src={user.avatar_url} alt={user.username} />
-			<div className="comment-author">{user.username}</div>
+			<div className="comment-author">{`u/${user.username}`}</div>
 		</div>
 	);
 }
