@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import SingleArticle from "./components/SingleArticle";
 import { Route, Routes } from "react-router-dom";
 import Topic from "./components/Topic";
+import NotFound from "./components/NotFound";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path="/" element={<Articles />} />
 					<Route path="/articles/:article_id" element={<SingleArticle />} />
 					<Route path="/articles/topic/:topic" element={<Topic />} />
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 		</div>
