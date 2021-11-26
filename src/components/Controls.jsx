@@ -1,9 +1,10 @@
-export default function Controls({ setSortBy }) {
+export default function Controls({ setSortBy, setPage }) {
 	// search and filter controls
 
 	// handle filter input
 	const handleFilter = (e) => {
 		setSortBy(e.target.name);
+		setPage(2);
 	};
 
 	return (
