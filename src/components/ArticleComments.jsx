@@ -23,7 +23,11 @@ export default function ArticleComments({ article_id }) {
 				<div className="comment-container" key={`${comment.comment_id}`}>
 					<UserInfo username={comment.author} />
 					<p className="comment-body">{comment.body}</p>
-					<LikeButton votes={comment.votes} />
+					<LikeButton
+						votes={comment.votes}
+						id={comment.comment_id}
+						isComment={true}
+					/>
 					<i className="far fa-clock"> {timeElapsed(comment.created_at)}</i>
 					<i className=""></i>
 					<DeleteComment

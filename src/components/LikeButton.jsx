@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { patchArticleVotes } from "../utils/api";
+import { patchArticleVotes, patchCommentVotes } from "../utils/api";
 
-export default function LikeButton({ votes = 0, id }) {
+export default function LikeButton({ votes = 0, id, isComment = false }) {
 	const [likes, setLikes] = useState(0);
 
 	const handleClick = (e) => {
@@ -12,7 +12,11 @@ export default function LikeButton({ votes = 0, id }) {
 		if (e.target.className === "fas fa-arrow-down") {
 			vote = -1;
 		}
-		patchArticleVotes(id, vote).then(() => {});
+		if (isComment) {
+			patchCommentVotes(id, vote).then(() => {});
+		} else {
+			patchArticleVotes(id, vote).then(() => {});
+		}
 		setLikes(likes + vote);
 	};
 
