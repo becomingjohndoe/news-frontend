@@ -5,12 +5,14 @@ const api = create({
 	baseURL: "https://news-nc-api.herokuapp.com/api/",
 });
 
-export const getAllArticles = (sort_by) => {
+export const getAllArticles = (sort_by, p) => {
+	console.log(sort_by, p);
 	return api
 		.get("articles", {
-			params: { sort_by },
+			params: { sort_by, p },
 		})
 		.then((res) => {
+			console.log(res.data.articles, "API");
 			return res.data.articles;
 		});
 };
@@ -37,12 +39,9 @@ export const getUserByUsername = (username) => {
 };
 
 export const getArticlesByTopic = (topic) => {
-	return api
-		.get(`articles?topic=${topic}`)
-		.then((res) => {
-			return res.data.articles;
-		})
-		.catch(console.log);
+	return api.get(`articles?topic=${topic}`).then((res) => {
+		return res.data.articles;
+	});
 };
 
 export const patchArticleVotes = (id, votes) => {
@@ -61,4 +60,12 @@ export const deleteComment = (comment_id) => {
 	return api.delete(`comments/${comment_id}`).then((res) => {
 		return res.data.comment;
 	});
+};
+
+export const patchCommentVotes = (comment_id, votes) => {
+	return api
+		.patch(`comments/${comment_id}`, { inc_votes: votes })
+		.then((res) => {
+			return res.data.comment;
+		});
 };
