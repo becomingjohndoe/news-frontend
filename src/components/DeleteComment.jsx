@@ -1,16 +1,48 @@
 import { deleteComment } from "../utils/api";
-
-export default function DeleteComment({ id, isVisible, setDeleted }) {
+import { DropdownButton, Dropdown } from "react-bootstrap";
+export default function DeleteComment({
+	id,
+	isVisible,
+	setDeleted,
+	setEdit,
+	setIdOfEdit,
+}) {
+	if (!isVisible) {
+		return <></>;
+	}
 	return (
-		<button
-			disabled={!isVisible}
-			className="delete-comment-button"
-			onClick={() => {
-				setDeleted(true);
-				deleteComment(id).then(() => setDeleted(false));
-			}}
+		<DropdownButton
+			variant="secondary"
+			size="sm"
+			id="dropdown-basic-button"
+			title="..."
 		>
-			Delete Comment
-		</button>
+			<Dropdown.Item
+				as="button"
+				onClick={() => {
+					setEdit(true);
+					setIdOfEdit(id);
+				}}
+			>
+				Edit
+			</Dropdown.Item>
+			<Dropdown.Item
+				as="button"
+				onClick={() => {
+					setDeleted(true);
+					deleteComment(id).then(() => setDeleted(false));
+				}}
+			>
+				Delete
+			</Dropdown.Item>
+		</DropdownButton>
 	);
 }
+
+// <div
+// 		className="delete-comment-button"
+//
+// 	>
+// 		<i className="fas fa-minus-circle"></i>
+// 		Delete Comment
+// 	</div>
