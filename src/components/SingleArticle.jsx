@@ -5,6 +5,7 @@ import ArticleCard from "./ArticleCard";
 import ArticleComments from "./ArticleComments";
 import loadingIcon from "../images/toppit(3).gif";
 import NotFound from "./NotFound";
+import SideBar from "./SideBar";
 export default function SingleArticle() {
 	const [article, setArticle] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +23,7 @@ export default function SingleArticle() {
 					setIsLoading(false);
 					setErr(err);
 				});
+			window.scrollTo(0, 0);
 		}, 700);
 	}, [article_id]);
 	if (err) {
@@ -36,8 +38,11 @@ export default function SingleArticle() {
 	}
 	return (
 		<>
-			<ArticleCard article={article} bodyClass="article-body-full" />
+			<div className="articles">
+				<ArticleCard article={article} bodyClass="article-body-full" />
+			</div>
 			<ArticleComments article_id={article_id} />
+			<SideBar />
 		</>
 	);
 }
