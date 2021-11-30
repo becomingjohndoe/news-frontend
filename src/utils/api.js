@@ -6,13 +6,11 @@ const api = create({
 });
 
 export const getAllArticles = (sort_by, p) => {
-	console.log(sort_by, p);
 	return api
 		.get("articles", {
 			params: { sort_by, p },
 		})
 		.then((res) => {
-			console.log(res.data.articles, "API");
 			return res.data.articles;
 		});
 };
@@ -68,4 +66,10 @@ export const patchCommentVotes = (comment_id, votes) => {
 		.then((res) => {
 			return res.data.comment;
 		});
+};
+
+export const getAllTopics = () => {
+	return api.get("topics").then((res) => {
+		return res.data.topics;
+	});
 };
