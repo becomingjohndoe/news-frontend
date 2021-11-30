@@ -17,6 +17,6 @@ export const timeElapsed = (start) => {
 		: minutes > 0
 		? `${minutes} minutes`
 		: seconds > 0
-		? `${seconds} seconds`
-		: `${millis} milliseconds`;
+		? `just now`
+		: `just now`;
 };
