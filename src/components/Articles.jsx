@@ -14,10 +14,9 @@ export default function Articles() {
 
 	useEffect(() => {
 		function handleScroll() {
-			if (
-				window.innerHeight + document.documentElement.scrollTop ===
-				document.documentElement.offsetHeight
-			) {
+			// if scroll to center of page
+
+			if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
 				getAllArticles(sortBy, page)
 					.then((data) => {
 						setArticles((current) => {
