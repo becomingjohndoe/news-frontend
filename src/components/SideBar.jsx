@@ -16,7 +16,9 @@ export default function SideBar() {
 
 	return (
 		<div className="sidebar">
-			<div className="sidebar-header">Topics</div>
+			<div className="sidebar-header">
+				<div className="sidebar-header-contents">Topics</div>
+			</div>
 			<div className="sidebar-topics">
 				{topics.map((topic) => (
 					<div className="topic" key={topic.slug}>
