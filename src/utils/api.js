@@ -74,10 +74,8 @@ export const getAllTopics = () => {
 	});
 };
 
-// reddit dank memes
-
 const dank = create({
-	baseURL: "https://meme-api.herokuapp.com/gimme",
+	baseURL: "https://meme-api.herokuapp.com/gimme/wholesomememes",
 });
 export const getMemes = () => {
 	return dank.get("").then((res) => {

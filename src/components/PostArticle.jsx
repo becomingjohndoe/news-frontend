@@ -1,6 +1,7 @@
 import UserAvatar from "./UserInfo";
 import { userContext } from "./context/userContext";
 import { useContext } from "react";
+import { Navigate } from "react-router";
 export default function PostArticle() {
 	const { user } = useContext(userContext);
 	return (

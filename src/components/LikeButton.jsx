@@ -22,7 +22,7 @@ export default function LikeButton({ votes = 0, id, isComment = false }) {
 			setHasDownVoted(false);
 		}
 		setLikes(likes + vote);
-		patchCommentVotes(id, vote);
+		isComment ? patchCommentVotes(id, vote) : patchArticleVotes(id, vote);
 	};
 
 	const handleDownVote = () => {
@@ -39,7 +39,7 @@ export default function LikeButton({ votes = 0, id, isComment = false }) {
 			setHasUpVoted(false);
 		}
 		setLikes(likes + vote);
-		patchCommentVotes(id, vote);
+		isComment ? patchCommentVotes(id, vote) : patchArticleVotes(id, vote);
 	};
 
 	return (

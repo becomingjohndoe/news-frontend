@@ -16,7 +16,7 @@ export default function Articles() {
 		function handleScroll() {
 			// if scroll to center of page
 
-			if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+			if (window.innerHeight + window.scrollY === document.body.offsetHeight) {
 				getAllArticles(sortBy, page)
 					.then((data) => {
 						setArticles((current) => {

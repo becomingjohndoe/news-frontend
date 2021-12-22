@@ -112,6 +112,12 @@ body {
 	.main {
 		padding: 10px 0;
 	}
+	body {
+		font-size: 3.3vw !important;
+	}
+	.btn {
+		font-size: 4vw !important;
+	}
 }
 
 .article-image {
@@ -155,10 +161,11 @@ body {
 
 .article-card-info {
 	/* margin: 10px auto; */
-	display: block ruby;
+	display: flex;
 	/* background: #ffff; */
 	padding-bottom: 10px;
 	font-size: 0.8em;
+	gap: 0.4rem;
 }
 
 .like-button {
@@ -231,8 +238,8 @@ body {
 }
 
 .user-avatar {
-	width: 22px;
-	height: 22px;
+	width: 1em;
+	height: 1em;
 	border-radius: 50%;
 	margin: 0 10px;
 	/* border: rgb(0, 0, 0) solid 1px; */
@@ -450,7 +457,7 @@ span {
 	padding: 10px;
 	border-radius: 5px;
 	background: #ffff;
-	margin: 0 0 10px 0;
+	margin: 10px 0 10px 0;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;

@@ -19,11 +19,12 @@ export default function ArticleCard({ article, bodyClass, linkClass }) {
 	return (
 		<div className="article-card">
 			<div className="article-card-info">
-				in{" "}
+				<span>in </span>
 				<Link className={linkClass} to={`/articles/topic/${article.topic}`}>
 					<strong>{`t/${article.topic}`}</strong>
-				</Link>{" "}
-				Posted by <UserAvatar username={article.author} />
+				</Link>
+				<span> Posted by</span>
+				<UserAvatar username={article.author} />
 			</div>
 			<Link to={`/articles/${article.article_id}`}>
 				<h5>{article.title}</h5>
